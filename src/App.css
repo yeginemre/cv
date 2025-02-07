@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,117 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Experience section styles */
+.experience-item {
+  background-color: #3d3d3d;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.experience-item h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item h4 {
+  color: #64b5f6;
+  margin-bottom: 0.5rem;
+}
+
+.experience-date {
+  color: #b0b0b0;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.experience-details {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.experience-details li {
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.experience-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #64b5f6;
+}
+
+/* Enhanced header name styling */
+.nav-bar h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #64b5f6, #90caf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.nav-bar h1:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced section header styling */
+.section h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #64b5f6, #90caf9);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section:hover h2::after {
+  width: 100px;
+}
+
+/* Make section headers responsive */
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.motivation-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #404040;
+}
+
+.motivation-section h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
