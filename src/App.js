@@ -1,5 +1,7 @@
 import './App.css';
 import transcriptPdf from './Local/transcript.pdf';
+import cvPdf from './Local/CV.pdf';
+import stickManVideo from './Local/stickMan.mp4';
 import { Link } from 'react-scroll';
 import { useState } from 'react';
 
@@ -52,16 +54,28 @@ function App() {
         {/* About Section */}
         <section id="about" className="section">
           <h2>About Me</h2>
-          <p>Hi, I'm Emre Yegin: 3rd year computer science student at Hacettepe University. I'm interested in computer graphics and game development.</p>
+          <p>Hi, I'm Emre Yegin: 3rd year computer science student at Hacettepe University. I'm a game developer and interested in computer graphics.</p>
           <p>You can find my works at the 'Projects' section.</p>
           
           <div className="motivation-section">
             <h3>My Motivation</h3>
             <p>
-              Each time i see Taleworlds building at our campus, i say to myself "I want to work there one day". I truly believe myself that i can create something valuable and work with
-              people that shares same passion with me. Because i really enjoy creating games and visuals. I love mount and blade games and i'm really excited for the next game of Taleworlds and i believe working for it would be a great experience for me. 
-              Also i'm currently working on two games One with unity and one with three.js. And honing my C# and javascript skills. 
+              As a computer science student with a strong passion for game development and computer graphics, 
+              I am driven by the opportunity to create immersive digital experiences. My dual perspective as 
+              both a developer and avid gamer gives me unique insights into user experience and game mechanics. 
+              My background in computer graphics, combined with my appreciation for gaming, cinema, and music, 
+              enables me to approach development with both technical precision and creative vision. I'm 
+              continuously expanding my expertise in C# and JavaScript while working on various projects that 
+              challenge and refine my skills.
             </p>
+            <a 
+              href={cvPdf} 
+              className="resume-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume →
+            </a>
           </div>
         </section>
 
@@ -107,7 +121,10 @@ function App() {
           <div className="project-grid">
             <div className="project-card">
               <h3>PBR WebGL Renderer</h3>
-              <p>A physically based rendering (PBR) implementation using WebGL. Features include dynamic lighting, material properties, and 3D model loading. Control the camera with mouse left, right, middle clicks.</p>
+              <p>A physically based rendering (PBR) implementation using WebGL and GLSL shaders. Features include dynamic lighting, material properties, and 3D model loading. Built with raw WebGL for optimal performance, using custom vertex and fragment shaders. Control the camera with mouse left, right, middle clicks.</p>
+              <div className="tech-stack">
+                <span>WebGL</span> • <span>GLSL</span> • <span>JavaScript</span> • <span>OBJ Loader</span>
+              </div>
               <div className="project-links">
                 <a href="https://github.com/yeginemre/PBR-Demo" target="_blank" rel="noopener noreferrer">Source Code</a>
                 <a href="https://yeginemre.github.io/PBR-Demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -128,7 +145,10 @@ function App() {
 
             <div className="project-card">
               <h3>Three.js Game Demo</h3>
-              <p>An interactive 3D game demo built with Three.js, cannon-es and dat.gui. Features custom shadings, lighting and physics. Press 'h' for help menu, 'x' and 'z' to change shaders.</p>
+              <p>An interactive 3D game demo showcasing advanced graphics techniques. Built with Three.js for 3D rendering, Cannon-es for physics simulation, and dat.gui for runtime controls. Features custom GLSL shaders for effects like bump mapping, toon shading, and wave simulation. Press 'h' for help menu, 'x' and 'z' to change shaders.</p>
+              <div className="tech-stack">
+                <span>Three.js</span> • <span>Cannon-es</span> • <span>dat.gui</span> • <span>GLSL</span> • <span>JavaScript</span>
+              </div>
               <div className="project-links">
                 <a href="https://github.com/yeginemre/Three.js-Demo" target="_blank" rel="noopener noreferrer">Source Code</a>
                 <a href="https://yeginemre.github.io/Three.js-Demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -145,6 +165,23 @@ function App() {
                 >
                   Experience
                 </button>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <h3>Stick Fight</h3>
+              <p>Showcase of 1 week progress of my hobby project: A 2D fighting game developed in Unity using C#. Created all animations using Unity's animation system and implemented custom character controllers.</p>
+              <div className="tech-stack">
+                <span>Unity</span> • <span>C#</span> • <span>Unity Animation</span> • <span>Unity Physics</span>
+              </div>
+              <div className="project-links">
+                <a 
+                  href={stickManVideo} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Showcase
+                </a>
               </div>
             </div>
           </div>
@@ -183,9 +220,10 @@ function App() {
             <div className="skill-category">
               <h3>Programming Languages</h3>
               <ul>
+                <li>C#</li>
                 <li>JavaScript</li>
-                <li>Java</li>
                 <li>C++</li>
+                <li>Java</li>
                 <li>Python</li>
               </ul>
             </div>
@@ -236,14 +274,38 @@ function App() {
             <div className="hobby-item">
               <h3>🎮 Gaming</h3>
               <p>Passionate about video games, board games and game development</p>
+              <a 
+                href="https://steamcommunity.com/id/yigin/" 
+                className="hobby-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Steam Profile →
+              </a>
             </div>
             <div className="hobby-item">
               <h3>🎵 Music</h3>
               <p>Playing piano and guitar. Enjoying various genres and discovering new artists</p>
+              <a 
+                href="https://open.spotify.com/user/shaolyz?si=akIdH_SNRg6XlDtZL4BqTg" 
+                className="hobby-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Spotify Profile →
+              </a>
             </div>
             <div className="hobby-item">
               <h3>🎬 Cinema</h3>
-              <p>Watching and analyzing movies, especially sci-fi and psychological thrillers</p>
+              <p>Watching and analyzing movies, especially sci-fi and thrillers</p>
+              <a 
+                href="https://boxd.it/3Scid" 
+                className="hobby-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Letterboxd Profile →
+              </a>
             </div>
             <div className="hobby-item">
               <h3>⚽ Sports</h3>
